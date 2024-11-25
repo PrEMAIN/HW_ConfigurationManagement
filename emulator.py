@@ -15,6 +15,7 @@ class Emulator:
         self._load_vfs()
         self.log_file = self.config["log_file"]
         self._initialize_log()
+        self._execute_startup_script()
 
     def _load_config(self, config_file):
         """Загрузка конфигурации из JSON файла."""
@@ -43,6 +44,23 @@ class Emulator:
         """Инициализация файла логов."""
         with open(self.log_file, 'w') as log:
             log.write("Логи эмулятора:\n")
+
+    def _execute_startup_script(self, gui=None):
+        """Выполняет команды из startup_script, если он указан в конфигурации."""
+        startup_script = self.config.get("startup_script")
+        if startup_script and os.path.exists(startup_script):
+            try:
+                with open(startup_script, 'r') as script:
+                    for line in script:
+                        command = line.strip()
+                        if command:  # Игнорировать пустые строки
+                            print(f"Выполнение команды из startup_script: {command}")
+                            result = self.execute_command(command)
+                            print(result)  # Выводить результат выполнения
+            except Exception as e:
+                print(f"Ошибка при выполнении startup_script: {e}")
+        else:
+            print("startup_script не указан или файл отсутствует.")
 
     def _log_action(self, action):
         """Записать действие в лог с датой и временем."""

@@ -1,5 +1,3 @@
 Логи эмулятора:
-{"timestamp": "2024-11-25 04:57:21", "action": "ls", "path": "/tmp/vfs"}
-{"timestamp": "2024-11-25 04:57:25", "action": "cd vfs", "path": "/tmp/vfs/vfs"}
-{"timestamp": "2024-11-25 04:57:28", "action": "ls", "path": "/tmp/vfs/vfs"}
-{"timestamp": "2024-11-25 04:57:31", "action": "exit", "path": "/tmp/vfs/vfs"}
+{"timestamp": "2024-11-25 11:58:21", "action": "ls", "path": "/tmp/vfs"}
+{"timestamp": "2024-11-25 11:59:35", "action": "exit", "path": "/tmp/vfs"}

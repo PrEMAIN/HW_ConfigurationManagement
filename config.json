@@ -2,6 +2,6 @@
   "username": "user",
   "hostname": "emulator",
   "vfs_archive": "/Users/romanagarkov/shell_emulator/vfs.zip",
-  "log_file": "emulator.log",
-  "startup_script": "startup_script.txt"
+  "log_file": "/Users/romanagarkov/shell_emulator/emulator.log",
+  "startup_script": "/Users/romanagarkov/shell_emulator/startup_script.txt"
 }
